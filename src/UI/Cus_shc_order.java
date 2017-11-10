@@ -5,15 +5,14 @@
  */
 package UI;
 
-/**
- *
- * @author User
- */
+import java.util.ArrayList;
+import java.util.List;
+import domain.shc_order;
+import javax.swing.JOptionPane;
+
 public class Cus_shc_order extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Cus_shc_order
-     */
+    private ArrayList<shc_order> shclist = new ArrayList<shc_order>();
     public Cus_shc_order() {
         initComponents();
     }
@@ -46,6 +45,8 @@ public class Cus_shc_order extends javax.swing.JFrame {
         Sapm = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         Squan = new javax.swing.JSpinner();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +98,15 @@ public class Cus_shc_order extends javax.swing.JFrame {
 
         Squan.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
+        jButton1.setText("Comfirm");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Back");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,18 +116,14 @@ public class Cus_shc_order extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(53, 53, 53)
-                                        .addComponent(jLabel1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Sres, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(61, 61, 61)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Sres, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()
@@ -154,8 +160,17 @@ public class Cus_shc_order extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Sminute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(Sminute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(117, 117, 117)
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)))
+                        .addGap(0, 141, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,7 +212,11 @@ public class Cus_shc_order extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(Sminute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Sapm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(37, 37, 37))
         );
 
         pack();
@@ -240,6 +259,28 @@ public class Cus_shc_order extends javax.swing.JFrame {
             Shour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"12","1","2","3","4","5","6","7","8","9"}));
         }
     }//GEN-LAST:event_SapmActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int comfirm;
+        
+        comfirm = JOptionPane.showConfirmDialog(null,"Are you comfirm your shcdule order??",null,JOptionPane.YES_NO_OPTION);
+        
+        if(comfirm==JOptionPane.YES_OPTION)
+        {
+            shc_order shc_order = new shc_order();
+            shc_order.setRestaurant(Sres.getSelectedItem().toString());
+            shc_order.setFood(Sfood.getSelectedItem().toString());
+            shc_order.setDrink(Sdrink.getSelectedItem().toString());
+            shc_order.setQuantity(Squan.getComponentCount());
+            shc_order.setDay(Sday.getSelectedItem().toString());
+            shc_order.setTime(Sapm.getSelectedItem().toString());
+            shc_order.setHour(Shour.getSelectedItem().toString());
+            shc_order.setMimute(Sminute.getSelectedItem().toString());
+
+            shclist.add(shc_order);            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,6 +326,8 @@ public class Cus_shc_order extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Sminute;
     private javax.swing.JSpinner Squan;
     private javax.swing.JComboBox<String> Sres;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
