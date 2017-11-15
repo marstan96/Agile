@@ -5,30 +5,23 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Registration extends javax.swing.JFrame {
-List<Person> persons = new ArrayList<Person>();
-    
+
+    List<Person> persons = new ArrayList<Person>();
+
     public Registration() {
         initComponents();
-        
-        id.setText("M1001");
+
+        id.setText("A1002");
 
         Person person = new Person();
         person.setId("A1001");
         person.setName("Tan Chun Keat");
-        person.setIcNumber("960819-10-9874");
-        person.setAge(21);
-        person.setPhoneNum("014-3648317");
-        person.setGender("Male");
+        person.setRestName("Jogaya");
+        person.setRestLocation("54, Jalan Wangsa Maju, 53300 Kuala Lumpur");
+        person.setPhoneNum("03-33445671");
+        person.setTypeFood("Noodles");
         persons.add(person);
 
-        person = new Person();
-        person.setId("A1002");
-        person.setName("Jessica");
-        person.setIcNumber("960819-10-4561");
-        person.setAge(21);
-        person.setPhoneNum("014-3648547");
-        person.setGender("Female");
-        persons.add(person);
     }
 
     /**
@@ -57,9 +50,9 @@ List<Person> persons = new ArrayList<Person>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel3.setText("IC Number : ");
+        jLabel3.setText("Restaurant Name : ");
 
-        jLabel4.setText("Age : ");
+        jLabel4.setText("Restaurant Location : ");
 
         jLabel5.setText("Phone Number : ");
 
@@ -80,16 +73,16 @@ List<Person> persons = new ArrayList<Person>();
 
         jLabel1.setText("Registration");
 
-        jLabel2.setText("Name : ");
+        jLabel2.setText("Restaurant Owner : ");
 
         jLabel6.setText("ID : ");
 
         id.setEditable(false);
         id.setColumns(10);
 
-        jLabel7.setText("Gender : ");
+        jLabel7.setText("Type of selling food : ");
 
-        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", " " }));
+        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Beverage", "Noodles", "Rice", "Roti" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,23 +157,21 @@ List<Person> persons = new ArrayList<Person>();
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        JOptionPane.showMessageDialog(null, "Successful Created", "Thank You", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Successful Created. Now You are the one of Fastest Deliveryman.", "Thank You", JOptionPane.INFORMATION_MESSAGE);
         clear();
+
     }//GEN-LAST:event_submitActionPerformed
 
     public void clear() {
-        id.setText("A1002");
+        id.setText("A1003");
         name.setText("");
         icNumber.setText("");
         age.setText("");
         number.setText("");
     }
-    
-    public static void main(String args[]) {
-        
-        
 
-        
+    public static void main(String args[]) {
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Registration().setVisible(true);
@@ -208,10 +199,10 @@ private static class Person {
 
         private String id;
         private String name;
-        private String icNumber;
-        private String gender;
-        private int age;
+        private String restName;
+        private String restLocation;
         private String phoneNum;
+        private String typeFood;
 
         public Person() {
 
@@ -233,28 +224,20 @@ private static class Person {
             this.name = name;
         }
 
-        public String getIcNumber() {
-            return icNumber;
+        public String getRestName() {
+            return restName;
         }
 
-        public void setIcNumber(String icNumber) {
-            this.icNumber = icNumber;
+        public void setRestName(String restName) {
+            this.restName = restName;
         }
 
-        public String getGender() {
-            return gender;
+        public String getRestLocation() {
+            return restLocation;
         }
 
-        public void setGender(String gender) {
-            this.gender = gender;
-        }
-
-        public int getAge() {
-            return age;
-        }
-
-        public void setAge(int age) {
-            this.age = age;
+        public void setRestLocation(String restLocation) {
+            this.restLocation = restLocation;
         }
 
         public String getPhoneNum() {
@@ -265,6 +248,13 @@ private static class Person {
             this.phoneNum = phoneNum;
         }
 
-        
+        public String getTypeFood() {
+            return typeFood;
+        }
+
+        public void setTypeFood(String typeFood) {
+            this.typeFood = typeFood;
+        }
+
     }
 }

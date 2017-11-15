@@ -109,12 +109,12 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="IC Number : "/>
+        <Property name="text" type="java.lang.String" value="Restaurant Name : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Age : "/>
+        <Property name="text" type="java.lang.String" value="Restaurant Location : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -157,7 +157,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Name : "/>
+        <Property name="text" type="java.lang.String" value="Restaurant Owner : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
@@ -173,16 +173,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gender : "/>
+        <Property name="text" type="java.lang.String" value="Type of selling food : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="gender">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Male"/>
-            <StringItem index="1" value="Female"/>
-            <StringItem index="2" value=" "/>
+          <StringArray count="4">
+            <StringItem index="0" value="Beverage"/>
+            <StringItem index="1" value="Noodles"/>
+            <StringItem index="2" value="Rice"/>
+            <StringItem index="3" value="Roti"/>
           </StringArray>
         </Property>
       </Properties>
