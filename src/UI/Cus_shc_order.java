@@ -54,7 +54,7 @@ public class Cus_shc_order extends javax.swing.JFrame {
 
         jLabel2.setText("Restaurant :");
 
-        Sres.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restaurant A", "Restaurant B", "Restaurant C", "Restaurant D" }));
+        Sres.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sushi King", "Sakae Sushi", "Nando's", "Hui Lau Shan" }));
         Sres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SresActionPerformed(evt);
@@ -63,11 +63,11 @@ public class Cus_shc_order extends javax.swing.JFrame {
 
         jLabel3.setText("Food           :");
 
-        Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Food A","Food A1","none"}));
+        Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Tamago","Inari","Unagi Slide","Ebi Ten","Golden Ball","Chuka lidako Gunkan","Surimi Scallop","Tuna Mayo","Spider Roll","Kani Tama Maki"}));
 
         jLabel4.setText("Drink           :");
 
-        Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Drink A","Drink A1","none"}));
+        Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Pepsi","100 plus","Sprite","none"}));
 
         jLabel5.setText("Step 1 : Select Restaurant");
 
@@ -117,13 +117,29 @@ public class Cus_shc_order extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Sday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Sapm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Shour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Sminute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 340, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Sres, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)))
+                                .addComponent(Sres, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7))
+                        .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()
@@ -141,35 +157,14 @@ public class Cus_shc_order extends javax.swing.JFrame {
                                         .addComponent(jLabel11)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Squan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(35, 35, 35))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Sday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Sapm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Shour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Sminute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(117, 117, 117)
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2)))
-                        .addGap(0, 141, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(153, 153, 153)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -178,29 +173,29 @@ public class Cus_shc_order extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(Sres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(Sres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel7))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(Sfood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(Sdrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel7))
-                    .addComponent(Squan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Sdrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(Squan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -225,25 +220,25 @@ public class Cus_shc_order extends javax.swing.JFrame {
     private void SresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SresActionPerformed
         //<editor-fold defaultstate="collapsed" desc=" Select food and drink by different restaurant ">
         
-        if(Sres.getSelectedItem().equals("Restaurant A"))
+        if(Sres.getSelectedItem().equals("Hui Lau Shan"))
         {
-            Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Food A","Food A1","none"}));
-            Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Drink A","Drink A1","none"}));
+            Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Mango Romance","Mango Triple Delight","Mango Sago","Mango Crystal Jelly","Mango Chewy Ball","D24 Durian Mochi","Mango Pancake","Deluxe Mango Mochi","Watermelon Honey Jelly","Healthy Mango Yakult"}));
+            Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Pepsi","100 plus","Sprite","none"}));
         }
-        else if(Sres.getSelectedItem().equals("Restaurant B"))
+        else if(Sres.getSelectedItem().equals("Sushi King"))
         {
-            Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Food B","Food B1","none"}));
-            Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Drink B","Drink B1","none"}));
+            Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Tamago","Inari","Unagi Slide","Ebi Ten","Golden Ball","Chuka lidako Gunkan","Surimi Scallop","Tuna Mayo","Spider Roll","Kani Tama Maki"}));
+            Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Pepsi","100 plus","Sprite","none"}));
         }
-        else if(Sres.getSelectedItem().equals("Restaurant C"))
+        else if(Sres.getSelectedItem().equals("Sakae Sushi"))
         {
-            Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Food C","Food C1","none"}));
-            Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Drink C","Drink C1","none"}));
+            Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Mentai Zukushi","Sachi Set","Salmon Zukushi","Salmon Treasures","Fuku Set","Golden Ball Salmon Trio Mayo","Rainbow Maki","Caterpillar Roll","Jyo Unagi","Ikura"}));
+            Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Pepsi","100 plus","Sprite","none"}));
         }
-        else if(Sres.getSelectedItem().equals("Restaurant D"))
+        else if(Sres.getSelectedItem().equals("Nando's"))
         {
-            Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Food D","Food D1","none"}));
-            Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Drink D","Drink D1","none"}));
+            Sfood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Chicken Wrap","Chicken Breast Burger","Chicken Caesar Wrap","Chicken Pita","Veggie Burger","Garlic Bread","Chargrilled Veg","Caesar Salad","Red Velvet Cake","Caramel Cheesecake"}));
+            Sdrink.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Pepsi","100 plus","Sprite","none"}));
         }
         //</editor-fold>
     }//GEN-LAST:event_SresActionPerformed
