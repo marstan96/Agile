@@ -61,11 +61,11 @@ public class huiLauShanMenu extends javax.swing.JFrame {
     public void addRowToJTable(){
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         ArrayList<menu> list = ListMenu();
-        Object rowData[] = new Object[2];
+        Object rowData[] = new Object[3];
         for(int i = 0;i <list.size();i++){
             rowData[0] = list.get(i).menuItem;
             rowData[1] = list.get(i).price;
-            
+            rowData[2] = list.get(i).qty;
             model.addRow(rowData);
         }
     }   
