@@ -11,17 +11,43 @@ public class Registration extends javax.swing.JFrame {
     public Registration() {
         initComponents();
 
-        id.setText("A1002");
+        id.setText("A1005");
 
         Person person = new Person();
         person.setId("A1001");
         person.setName("Tan Chun Keat");
-        person.setRestName("Jogaya");
+        person.setRestName("Hui Lau Shan");
         person.setRestLocation("54, Jalan Wangsa Maju, 53300 Kuala Lumpur");
         person.setPhoneNum("03-33445671");
-        person.setTypeFood("Noodles");
+        person.setJobTitle("Boss");
         persons.add(person);
-
+        
+        person = new Person();
+        person.setId("A1002");
+        person.setName("Jeremy Lin");
+        person.setRestName("Sushi King");
+        person.setRestLocation("12, Jalan Wangsa Maju, 53300 Kuala Lumpur");
+        person.setPhoneNum("03-32918317");
+        person.setJobTitle("Boss");
+        persons.add(person);
+        
+        person = new Person();
+        person.setId("A1003");
+        person.setName("Leborn James");
+        person.setRestName("Sakae Sushi");
+        person.setRestLocation("44, Jalan PV 15, 53300 Kuala Lumpur");
+        person.setPhoneNum("03-32678954");
+        person.setJobTitle("Boss");
+        persons.add(person);
+        
+        person = new Person();
+        person.setId("A1004");
+        person.setName("John Cena");
+        person.setRestName("Nando's");
+        person.setRestLocation("54, Jalan Prima Setapak, 53300 Kuala Lumpur");
+        person.setPhoneNum("03-32601547");
+        person.setJobTitle("Boss");
+        persons.add(person);
     }
 
     /**
@@ -45,8 +71,8 @@ public class Registration extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        gender = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        title = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,9 +106,9 @@ public class Registration extends javax.swing.JFrame {
         id.setEditable(false);
         id.setColumns(10);
 
-        jLabel7.setText("Type of selling food : ");
+        jLabel8.setText("Job Title : ");
 
-        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Beverage", "Noodles", "Rice", "Roti" }));
+        title.setColumns(10);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,24 +128,27 @@ public class Registration extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7))
+                            .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                                 .addComponent(jLabel6))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(icNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(icNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addContainerGap(384, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,11 +175,11 @@ public class Registration extends javax.swing.JFrame {
                     .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                    .addComponent(jLabel8)
+                    .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(submit)
-                .addGap(37, 37, 37))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -163,11 +192,13 @@ public class Registration extends javax.swing.JFrame {
     }//GEN-LAST:event_submitActionPerformed
 
     public void clear() {
-        id.setText("A1003");
+        id.setText("A1006");
         name.setText("");
         icNumber.setText("");
         age.setText("");
         number.setText("");
+        title.setText("");
+        
     }
 
     public static void main(String args[]) {
@@ -181,7 +212,6 @@ public class Registration extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField age;
-    private javax.swing.JComboBox<String> gender;
     private javax.swing.JTextField icNumber;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
@@ -190,10 +220,11 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField name;
     private javax.swing.JTextField number;
     private javax.swing.JButton submit;
+    private javax.swing.JTextField title;
     // End of variables declaration//GEN-END:variables
 private static class Person {
 
@@ -202,7 +233,7 @@ private static class Person {
         private String restName;
         private String restLocation;
         private String phoneNum;
-        private String typeFood;
+        private String jobTitle;
 
         public Person() {
 
@@ -210,6 +241,14 @@ private static class Person {
 
         public String getId() {
             return id;
+        }
+
+        public String getJobTitle() {
+            return jobTitle;
+        }
+
+        public void setJobTitle(String jobTitle) {
+            this.jobTitle = jobTitle;
         }
 
         public void setId(String id) {
@@ -246,14 +285,6 @@ private static class Person {
 
         public void setPhoneNum(String phoneNum) {
             this.phoneNum = phoneNum;
-        }
-
-        public String getTypeFood() {
-            return typeFood;
-        }
-
-        public void setTypeFood(String typeFood) {
-            this.typeFood = typeFood;
         }
 
     }
