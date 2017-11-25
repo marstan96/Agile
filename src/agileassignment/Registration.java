@@ -18,7 +18,7 @@ public class Registration extends javax.swing.JFrame {
         person.setName("Tan Chun Keat");
         person.setRestName("Hui Lau Shan");
         person.setRestLocation("54, Jalan Wangsa Maju, 53300 Kuala Lumpur");
-        person.setPhoneNum("03-33445671");
+        person.setPhoneNum("03-32918317");
         person.setJobTitle("Boss");
         persons.add(person);
         
