@@ -5,19 +5,23 @@
  */
 package domain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class shc_order {
+public class shc_order implements Serializable {
     
-    private String restaurant,food,drink,day,time,hour,mimute;
-    private int quantity;
+    private String restaurant,food,drink,day,time,hour,minute;
+    private int quantity,prio,orderNo;
+    private static int nextnum = 5000;
 
     public shc_order() {
+        this.orderNo = nextnum++;
     }
 
-    public shc_order(String restaurant, String food, String drink, String day, String time, int quantity, String hour, String mimute) {
+    public shc_order(String restaurant, String food, String drink, String day, String time, int quantity, String hour, String minute) {
         this.restaurant = restaurant;
         this.food = food;
         this.drink = drink;
@@ -25,7 +29,8 @@ public class shc_order {
         this.time = time;
         this.quantity = quantity;
         this.hour = hour;
-        this.mimute = mimute;
+        this.minute = minute;
+        calprio();
     }
 
     public String getRestaurant() {
@@ -84,12 +89,54 @@ public class shc_order {
         this.hour = hour;
     }
 
-    public String getMimute() {
-        return mimute;
+    public String getMinute() {
+        return minute;
     }
 
-    public void setMimute(String mimute) {
-        this.mimute = mimute;
+    public void setMinute(String minute) {
+        this.minute = minute;
+    }
+
+    public int getPrio() {
+        return prio;
+    }
+
+    public void setPrio(int prio) {
+        this.prio = prio;
+    }
+
+    public int getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(int orderNo) {
+        this.orderNo = orderNo;
+    }
+
+    public static int getNextnum() {
+        return nextnum;
+    }
+
+    public static void setNextnum(int nextnum) {
+        shc_order.nextnum = nextnum;
+    }
+    
+    public void calprio()
+    {
+        int inthour = Integer.parseInt(hour);
+        int intminute = Integer.parseInt(minute);
+        String strtime = this.time;
+        
+        if(strtime.equals("AM"))
+        {
+            
+        }
+    }
+
+    @Override
+    public String toString() {
+        String str = String.format("%d %s:%s %s   %-30s %s & %s x %d\n", orderNo,hour,minute,time,restaurant,food,drink,quantity);
+        return str;
     }
     
 }

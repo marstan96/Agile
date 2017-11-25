@@ -8,13 +8,23 @@ package UI;
 import java.util.ArrayList;
 import java.util.List;
 import domain.shc_order;
+import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import javax.swing.JOptionPane;
 
 public class Cus_shc_order extends javax.swing.JFrame {
 
-    private ArrayList<shc_order> shclist = new ArrayList<shc_order>();
+    private List<shc_order> shclist = new ArrayList<>();
+    private boolean flag = false;
+    private int orderno;
     public Cus_shc_order() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -81,7 +91,7 @@ public class Cus_shc_order extends javax.swing.JFrame {
 
         jLabel9.setText("Time :");
 
-        Shour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7","8","9","10","11" }));
+        Shour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "07","08","09","10","11" }));
 
         jLabel10.setText(":");
 
@@ -106,6 +116,11 @@ public class Cus_shc_order extends javax.swing.JFrame {
         });
 
         jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -247,36 +262,115 @@ public class Cus_shc_order extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(Sapm.getSelectedItem().equals("AM"))
         {
-            Shour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"7","8","9","10","11"}));
+            Shour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"07","08","09","10","11"}));
         }
         else if(Sapm.getSelectedItem().equals("PM"))
         {
-            Shour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"12","1","2","3","4","5","6","7","8","9"}));
+            Shour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"12","01","02","03","04","05","06","07","08","09"}));
         }
     }//GEN-LAST:event_SapmActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int comfirm;
-        
-        comfirm = JOptionPane.showConfirmDialog(null,"Are you comfirm your shcdule order??",null,JOptionPane.YES_NO_OPTION);
-        
-        if(comfirm==JOptionPane.YES_OPTION)
+        if(flag==false)
         {
-            shc_order shc_order = new shc_order();
-            shc_order.setRestaurant(Sres.getSelectedItem().toString());
-            shc_order.setFood(Sfood.getSelectedItem().toString());
-            shc_order.setDrink(Sdrink.getSelectedItem().toString());
-            shc_order.setQuantity(Squan.getComponentCount());
-            shc_order.setDay(Sday.getSelectedItem().toString());
-            shc_order.setTime(Sapm.getSelectedItem().toString());
-            shc_order.setHour(Shour.getSelectedItem().toString());
-            shc_order.setMimute(Sminute.getSelectedItem().toString());
+            int comfirm;
 
-            shclist.add(shc_order);            
+            comfirm = JOptionPane.showConfirmDialog(null,"Are you comfirm your shcdule order??",null,JOptionPane.YES_NO_OPTION);
+
+            if(comfirm==JOptionPane.YES_OPTION)
+            {
+                shc_order shc_order = new shc_order();
+                shc_order.setRestaurant(Sres.getSelectedItem().toString());
+                shc_order.setFood(Sfood.getSelectedItem().toString());
+                shc_order.setDrink(Sdrink.getSelectedItem().toString());
+                shc_order.setQuantity((Integer)Squan.getValue());
+                shc_order.setDay(Sday.getSelectedItem().toString());
+                shc_order.setTime(Sapm.getSelectedItem().toString());
+                shc_order.setHour(Shour.getSelectedItem().toString());
+                shc_order.setMinute(Sminute.getSelectedItem().toString());
+
+                shclist.add(shc_order);
+            }
+        }
+        else
+        {
+            int comfirm;
+        
+            comfirm = JOptionPane.showConfirmDialog(null,"Are you comfirm your Update??",null,JOptionPane.YES_NO_OPTION);
+
+            if(comfirm==JOptionPane.YES_OPTION)
+            {
+                for(int i = 0;i<shclist.size();i++)
+                {
+                    if(orderno == shclist.get(i).getOrderNo())
+                    {
+                        shclist.get(i).setRestaurant(Sres.getSelectedItem().toString());
+                        shclist.get(i).setFood(Sfood.getSelectedItem().toString());
+                        shclist.get(i).setDrink(Sdrink.getSelectedItem().toString());
+                        shclist.get(i).setQuantity((Integer)Squan.getValue());
+                        shclist.get(i).setDay(Sday.getSelectedItem().toString());
+                        shclist.get(i).setTime(Sapm.getSelectedItem().toString());
+                        shclist.get(i).setHour(Shour.getSelectedItem().toString());
+                        shclist.get(i).setMinute(Sminute.getSelectedItem().toString());
+                    }
+                }
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        try 
+        {
+          ObjectOutputStream ooStream = new ObjectOutputStream(new FileOutputStream("shclist.dat"));
+          ooStream.writeObject(shclist);
+          ooStream.close();
+        } catch (FileNotFoundException ex) 
+        {
+          JOptionPane.showMessageDialog(null, "File not found", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } catch (IOException ex) 
+        {
+          JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        CUD_shcorder shcorder = new CUD_shcorder();
+        shcorder.setVisible(true);
+        setVisible(false);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void initializeList() 
+    {
+    try {
+      ObjectInputStream oiStream = new ObjectInputStream(new FileInputStream("shclist.dat"));
+      shclist = (ArrayList) (oiStream.readObject());
+      oiStream.close();
+    } catch (FileNotFoundException ex) {
+      JOptionPane.showMessageDialog(null, "File not found", "ERROR", JOptionPane.ERROR_MESSAGE);
+    } catch (IOException ex) {
+      JOptionPane.showMessageDialog(null, "Cannot read from file", "ERROR", JOptionPane.ERROR_MESSAGE);
+    } catch (ClassNotFoundException ex) {
+      JOptionPane.showMessageDialog(null, "Class not found", "ERROR", JOptionPane.ERROR_MESSAGE);
+    }
+  }
+    
+    public void updateorder(int orderno)
+    {
+        initializeList();
+        System.out.print(orderno+"\n");
+        jLabel1.setText("Update Order");
+        this.orderno = orderno;
+    }
+
+    public boolean getFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+    
     /**
      * @param args the command line arguments
      */
