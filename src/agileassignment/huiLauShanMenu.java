@@ -113,6 +113,11 @@ public class huiLauShanMenu extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         submitButton.setText("SUBMIT");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("HUI LAU SHAN HEALTHY DESSERT");
 
@@ -174,6 +179,14 @@ public class huiLauShanMenu extends javax.swing.JFrame {
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         CloseFrame();
     }//GEN-LAST:event_cancelButtonActionPerformed
+
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        huiLauShanOrderConfirmation confirmation = new huiLauShanOrderConfirmation();
+        confirmation.setVisible(true);
+        confirmation.pack();
+        confirmation.setLocationRelativeTo(null);
+        confirmation.setTitle("ORDER CONFIRMATION");
+    }//GEN-LAST:event_submitButtonActionPerformed
     public void CloseFrame(){
         super.dispose();
     }

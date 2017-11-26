@@ -1,61 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package agileassignment;
 
 import java.util.ArrayList;
-import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 /**
  *
  * @author Asus
  */
-public class sushiKingMenu extends javax.swing.JFrame {
-    
+public class nandosOrderConfirmation extends javax.swing.JFrame {
+    ArrayList<menu> list = new ArrayList<menu>();
     /**
-     * Creates new form NewJFrame2
+     * Creates new form nandosOrderConfirmation
      */
-    public sushiKingMenu() {
+    public nandosOrderConfirmation() {
         initComponents();
         addRowToJTable();
     }
-
-    public ArrayList ListMenu(){
-        ArrayList<menu> menuList = new ArrayList<menu>();
-        menu menu1 = new menu("Tamago",2.00,0);
-        menu menu2 = new menu("Inari",3.00,0);
-        menu menu3 = new menu("Unagi Slide",6.00,0);
-        menu menu4 = new menu("Ebi Ten",6.00,0);
-        menu menu5 = new menu("Golden Ball",4.00,0);
-        menu menu6 = new menu("Chuka lidako Gunkan",4.00,0);
-        menu menu7 = new menu("Surimi Scallop",4.00,0);
-        menu menu8 = new menu("Tuna Mayo",3.00,0);
-        menu menu9 = new menu("Spider Roll",6.00,0);
-        menu menu10 = new menu("Kani Tama Maki",3.00,0);
-        menuList.add(menu1);
-        menuList.add(menu2);
-        menuList.add(menu3);
-        menuList.add(menu4);
-        menuList.add(menu5);
-        menuList.add(menu6);
-        menuList.add(menu7);
-        menuList.add(menu8);
-        menuList.add(menu9);
-        menuList.add(menu10);
-        return menuList;
-    }
     
+    public ArrayList ListMenu(){
+        menu menu1 = new menu("Chicken Wrap",18.00,1);
+        menu menu2 = new menu("Chicken Breast Burger",18.00,1);
+        menu menu3 = new menu("Chicken Caesar Wrap",17.00,1);
+        menu menu4 = new menu("Chicken Pita",17.00,1);
+        menu menu5 = new menu("Veggie Burger",17.00,1);
+        list.add(menu1);
+        list.add(menu2);
+        list.add(menu3);
+        list.add(menu4);
+        list.add(menu5);
+        return list;
+    }
     public void addRowToJTable(){
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         ArrayList<menu> list = ListMenu();
         Object rowData[] = new Object[3];
-        for(int i = 0;i <list.size();i++){
+        for(int i = 0;i < list.size();i++){
             rowData[0] = list.get(i).getMenuItem();
             rowData[1] = list.get(i).getPrice();
             rowData[2] = list.get(i).getQty();
+            rowData[2].toString();
             model.addRow(rowData);
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,17 +63,13 @@ public class sushiKingMenu extends javax.swing.JFrame {
         cancelButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         submitButton.setText("SUBMIT");
-        submitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButtonActionPerformed(evt);
-            }
-        });
 
-        sushiKingLabel.setText("SUSHI KING");
+        sushiKingLabel.setText("ORDER CONFIRMATION");
 
         cancelButton.setText("CANCEL");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +90,7 @@ public class sushiKingMenu extends javax.swing.JFrame {
                 java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -115,24 +103,34 @@ public class sushiKingMenu extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
+        jButton1.setText("REMOVE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sushiKingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(222, 222, 222))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(cancelButton)
-                .addGap(18, 18, 18)
-                .addComponent(submitButton)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(sushiKingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(cancelButton)
+                        .addGap(55, 55, 55)
+                        .addComponent(submitButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(206, 206, 206)
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,11 +139,13 @@ public class sushiKingMenu extends javax.swing.JFrame {
                 .addComponent(sushiKingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelButton)
                     .addComponent(submitButton))
-                .addGap(55, 55, 55))
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,25 +162,28 @@ public class sushiKingMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
-       
-            
-    }//GEN-LAST:event_resetButtonActionPerformed
-
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         CloseFrame();
     }//GEN-LAST:event_cancelButtonActionPerformed
-
-    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        sushiKingOrderConfirmation confirmation = new sushiKingOrderConfirmation();
-        confirmation.setVisible(true);
-        confirmation.pack();
-        confirmation.setLocationRelativeTo(null);
-        confirmation.setTitle("ORDER CONFIRMATION");
-    }//GEN-LAST:event_submitButtonActionPerformed
     public void CloseFrame(){
         super.dispose();
     }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        String message = "Do you sure want to remove your menu item from your order list?";
+        String title = "REMOVE MENU ITEM";
+        int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION)
+        {
+            if (jTable1.getSelectedRow() != -1) {
+
+                model.removeRow(jTable1.getSelectedRow());
+
+            }
+
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -198,31 +201,30 @@ public class sushiKingMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(sushiKingMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(nandosOrderConfirmation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(sushiKingMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(nandosOrderConfirmation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(sushiKingMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(nandosOrderConfirmation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(sushiKingMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(nandosOrderConfirmation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                sushiKingMenu frame =new sushiKingMenu();
-                frame.setVisible(true);
+                new nandosOrderConfirmation().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable1;
     private javax.swing.JButton submitButton;
     private javax.swing.JLabel sushiKingLabel;
     // End of variables declaration//GEN-END:variables
