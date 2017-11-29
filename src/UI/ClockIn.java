@@ -5,7 +5,7 @@
  */
 package UI;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 import java.text.DateFormat;
@@ -15,8 +15,8 @@ import java.text.DateFormat;
  * @author renmi
  */
 public class ClockIn extends javax.swing.JFrame {
-        private List<String> clockIn = Arrays.asList("");
-        private List<String> clockOut = Arrays.asList("");
+        private ArrayList<String> clockIn = new ArrayList<String>();
+//        private ArrayList<String> clockOut = new ArrayList<String>();
         private Date now = new Date();
     /**
      * Creates new form ClockIn
@@ -126,18 +126,18 @@ public class ClockIn extends javax.swing.JFrame {
         clockIn.add(jcbStaffName.getSelectedItem().toString());
 //        System.out.print(""+clockIn.get(0));
         jtaClock.setText(null);
-        jtaClock.setText(""+jcbStaffName.getSelectedItem().toString()+"had clock in at "
+        jtaClock.setText(" "+jcbStaffName.getSelectedItem().toString()+" had clock in at "
         +now);
     }//GEN-LAST:event_jbtClockInActionPerformed
 
     private void jbtClockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtClockOutActionPerformed
-        String staffName = jcbStaffName.getSelectedItem().toString();
-        if(clockIn.contains(""+staffName))
-        clockIn.remove(staffName);
-        clockOut.add(staffName);
-        jtaClock.setText(null);
-        jtaClock.setText(""+staffName+"had clock out at "
-        +now);
+//        String staffName = jcbStaffName.getSelectedItem().toString();
+//        if(clockIn.contains(""+staffName))
+//        clockIn.remove(staffName);
+//        clockOut.add(staffName);
+//        jtaClock.setText(null);
+//        jtaClock.setText(""+staffName+"had clock out at "
+//        +now);
         
     }//GEN-LAST:event_jbtClockOutActionPerformed
 
