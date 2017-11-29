@@ -29,13 +29,16 @@
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlbStaffName" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jtfPassword" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jcbStaffName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jcbStaffId" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jlbPassword" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -44,7 +47,6 @@
                                   <Component id="jbtClockIn" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jlbStaffName" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="141" max="32767" attributes="0"/>
                   </Group>
@@ -65,12 +67,17 @@
               <Component id="jlbStaffName" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jcbStaffName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jcbStaffId" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jbtClockIn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jbtClockOut" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="69" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbtClockOut" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlbPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jtfPassword" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -82,24 +89,22 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jlbStaffName">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Staff name: "/>
+        <Property name="text" type="java.lang.String" value="Staff ID: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jcbStaffName">
+    <Component class="javax.swing.JComboBox" name="jcbStaffId">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="4">
             <StringItem index="0" value="[Please select]"/>
-            <StringItem index="1" value="Billy"/>
-            <StringItem index="2" value="Alex"/>
-            <StringItem index="3" value="Edward"/>
-            <StringItem index="4" value="Derik"/>
-            <StringItem index="5" value=""/>
+            <StringItem index="1" value="ST001"/>
+            <StringItem index="2" value="ST002"/>
+            <StringItem index="3" value="ST003"/>
           </StringArray>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbStaffNameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbStaffIdActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -139,6 +144,16 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtClockOutActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbPassword">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Password:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtfPassword">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtfPasswordActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

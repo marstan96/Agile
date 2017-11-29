@@ -32,21 +32,23 @@ public class ClockIn extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jlbStaffName = new javax.swing.JLabel();
-        jcbStaffName = new javax.swing.JComboBox<>();
+        jcbStaffId = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaClock = new javax.swing.JTextArea();
         jbtClockIn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jbtClockOut = new javax.swing.JButton();
+        jlbPassword = new javax.swing.JLabel();
+        jtfPassword = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jlbStaffName.setText("Staff name: ");
+        jlbStaffName.setText("Staff ID: ");
 
-        jcbStaffName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[Please select]", "Billy", "Alex", "Edward", "Derik", "" }));
-        jcbStaffName.addActionListener(new java.awt.event.ActionListener() {
+        jcbStaffId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[Please select]", "ST001", "ST002", "ST003" }));
+        jcbStaffId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbStaffNameActionPerformed(evt);
+                jcbStaffIdActionPerformed(evt);
             }
         });
 
@@ -70,6 +72,14 @@ public class ClockIn extends javax.swing.JFrame {
             }
         });
 
+        jlbPassword.setText("Password:");
+
+        jtfPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfPasswordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,18 +90,20 @@ public class ClockIn extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbStaffName)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jtfPassword, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGap(66, 66, 66)
                                         .addComponent(jLabel1))
-                                    .addComponent(jcbStaffName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jcbStaffId, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jlbPassword, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(55, 55, 55)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel2)
                                     .addComponent(jbtClockOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jbtClockIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jlbStaffName))
+                                    .addComponent(jbtClockIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(0, 141, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -106,11 +118,15 @@ public class ClockIn extends javax.swing.JFrame {
                 .addComponent(jlbStaffName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jcbStaffName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbStaffId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtClockIn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbtClockOut)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtClockOut)
+                    .addComponent(jlbPassword))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -118,16 +134,32 @@ public class ClockIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcbStaffNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbStaffNameActionPerformed
+    private void jcbStaffIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbStaffIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jcbStaffNameActionPerformed
+    }//GEN-LAST:event_jcbStaffIdActionPerformed
 
     private void jbtClockInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtClockInActionPerformed
-        clockIn.add(jcbStaffName.getSelectedItem().toString());
-//        System.out.print(""+clockIn.get(0));
+        clockIn.add(jcbStaffId.getSelectedItem().toString());
+        if(jcbStaffId.equals("ST001") && jlbPassword.getText().equals("ST001"))
+        {
         jtaClock.setText(null);
-        jtaClock.setText(" "+jcbStaffName.getSelectedItem().toString()+" had clock in at "
-        +now);
+        jtaClock.setText("Alex had clock in at "+now);
+        clockIn.add("Alex");
+        }
+        else if(jcbStaffId.equals("ST002") && jlbPassword.getText().equals("ST002"))
+        {
+        jtaClock.setText(null);
+        jtaClock.setText("Edward had clock in at "+now);
+        clockIn.add("Edward");
+        }
+        else if(jcbStaffId.equals("ST003") && jlbPassword.getText().equals("ST003"))
+        {
+        jtaClock.setText(null);
+        jtaClock.setText("John had clock in at "+now);
+        clockIn.add("John");
+        }
+        else
+            jtaClock.setText("Password and ID does not fit");
     }//GEN-LAST:event_jbtClockInActionPerformed
 
     private void jbtClockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtClockOutActionPerformed
@@ -140,6 +172,10 @@ public class ClockIn extends javax.swing.JFrame {
 //        +now);
         
     }//GEN-LAST:event_jbtClockOutActionPerformed
+
+    private void jtfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,8 +218,10 @@ public class ClockIn extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtClockIn;
     private javax.swing.JButton jbtClockOut;
-    private javax.swing.JComboBox<String> jcbStaffName;
+    private javax.swing.JComboBox<String> jcbStaffId;
+    private javax.swing.JLabel jlbPassword;
     private javax.swing.JLabel jlbStaffName;
     private javax.swing.JTextArea jtaClock;
+    private javax.swing.JTextField jtfPassword;
     // End of variables declaration//GEN-END:variables
 }
