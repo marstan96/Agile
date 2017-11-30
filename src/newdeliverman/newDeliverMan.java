@@ -53,15 +53,15 @@ public class newDeliverMan extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtfIC = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jtfEmergencyNo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jtfEmail = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jtfGender = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jcbStatus = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -130,43 +130,43 @@ public class newDeliverMan extends javax.swing.JFrame {
         jLabel6.setMinimumSize(new java.awt.Dimension(150, 30));
         jLabel6.setPreferredSize(new java.awt.Dimension(150, 30));
 
-        jTextField1.setMaximumSize(new java.awt.Dimension(400, 30));
-        jTextField1.setMinimumSize(new java.awt.Dimension(400, 30));
-        jTextField1.setPreferredSize(new java.awt.Dimension(400, 30));
+        jtfIC.setMaximumSize(new java.awt.Dimension(400, 30));
+        jtfIC.setMinimumSize(new java.awt.Dimension(400, 30));
+        jtfIC.setPreferredSize(new java.awt.Dimension(400, 30));
 
         jLabel7.setText("Emergency Contact ");
         jLabel7.setMaximumSize(new java.awt.Dimension(150, 30));
         jLabel7.setMinimumSize(new java.awt.Dimension(150, 30));
         jLabel7.setPreferredSize(new java.awt.Dimension(150, 30));
 
-        jTextField2.setMaximumSize(new java.awt.Dimension(400, 30));
-        jTextField2.setMinimumSize(new java.awt.Dimension(400, 30));
-        jTextField2.setPreferredSize(new java.awt.Dimension(400, 30));
+        jtfEmergencyNo.setMaximumSize(new java.awt.Dimension(400, 30));
+        jtfEmergencyNo.setMinimumSize(new java.awt.Dimension(400, 30));
+        jtfEmergencyNo.setPreferredSize(new java.awt.Dimension(400, 30));
 
         jLabel8.setText("E-Mail                       ");
         jLabel8.setMaximumSize(new java.awt.Dimension(150, 30));
         jLabel8.setMinimumSize(new java.awt.Dimension(150, 30));
         jLabel8.setPreferredSize(new java.awt.Dimension(150, 30));
 
-        jTextField3.setMaximumSize(new java.awt.Dimension(400, 30));
-        jTextField3.setMinimumSize(new java.awt.Dimension(400, 30));
-        jTextField3.setPreferredSize(new java.awt.Dimension(400, 30));
+        jtfEmail.setMaximumSize(new java.awt.Dimension(400, 30));
+        jtfEmail.setMinimumSize(new java.awt.Dimension(400, 30));
+        jtfEmail.setPreferredSize(new java.awt.Dimension(400, 30));
 
         jLabel9.setText("Gender                     ");
         jLabel9.setMaximumSize(new java.awt.Dimension(150, 30));
         jLabel9.setMinimumSize(new java.awt.Dimension(150, 30));
         jLabel9.setPreferredSize(new java.awt.Dimension(150, 30));
 
-        jTextField4.setMaximumSize(new java.awt.Dimension(400, 30));
-        jTextField4.setMinimumSize(new java.awt.Dimension(400, 30));
-        jTextField4.setPreferredSize(new java.awt.Dimension(400, 30));
+        jtfGender.setMaximumSize(new java.awt.Dimension(400, 30));
+        jtfGender.setMinimumSize(new java.awt.Dimension(400, 30));
+        jtfGender.setPreferredSize(new java.awt.Dimension(400, 30));
 
         jLabel10.setText("Status                      ");
         jLabel10.setMaximumSize(new java.awt.Dimension(150, 30));
         jLabel10.setMinimumSize(new java.awt.Dimension(150, 30));
         jLabel10.setPreferredSize(new java.awt.Dimension(150, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Full-Time", "Part-Time" }));
+        jcbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Full-Time", "Part-Time" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,13 +199,13 @@ public class newDeliverMan extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jtfName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jtfIC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtfEmergencyNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jtfContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtfGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jcbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addGap(157, 157, 157)
@@ -230,7 +230,7 @@ public class newDeliverMan extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfIC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -241,20 +241,20 @@ public class newDeliverMan extends javax.swing.JFrame {
                     .addComponent(jtfContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfEmergencyNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -270,16 +270,26 @@ public class newDeliverMan extends javax.swing.JFrame {
         // TODO add your handling code here:
         //adding new staff
         String name = jtfName.getText();
+        String icNumber = jtfIC.getText();
         String address = jtaAddress.getText();
         String contactNo = jtfContactNo.getText();
-        deliverMan manName = new deliverMan(name,address,contactNo);
+        String emergencyNo = jtfEmergencyNo.getText();
+        String eMail = jtfEmail.getText();
+        String gender = jtfGender.getText();
+        int status = jcbStatus.getSelectedIndex();
+        deliverMan manName = new deliverMan(name,icNumber,address,contactNo,emergencyNo,eMail,gender,status);
         DeliverMan.add(manName);
         JOptionPane.showMessageDialog(null, "New Delivery Man added.");
         //prepare new staff
         jtfStaffID.setText("" + deliverMan.getDmID());
         jtfName.setText("");
+        jtfIC.setText("");
         jtaAddress.setText("");
         jtfContactNo.setText("");
+        jtfEmergencyNo.setText("");
+        jtfEmail.setText("");
+        jtfGender.setText("");
+        jcbStatus.setSelectedIndex(0);
         jtfName.grabFocus();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -338,7 +348,6 @@ public class newDeliverMan extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -350,12 +359,13 @@ public class newDeliverMan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JComboBox<String> jcbStatus;
     private javax.swing.JTextArea jtaAddress;
     private javax.swing.JTextField jtfContactNo;
+    private javax.swing.JTextField jtfEmail;
+    private javax.swing.JTextField jtfEmergencyNo;
+    private javax.swing.JTextField jtfGender;
+    private javax.swing.JTextField jtfIC;
     private javax.swing.JTextField jtfName;
     private javax.swing.JTextField jtfStaffID;
     // End of variables declaration//GEN-END:variables
