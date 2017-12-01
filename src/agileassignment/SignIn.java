@@ -1,3 +1,5 @@
+package agileassignment;
+
 import javax.swing.JFrame;
 
 public class SignIn extends javax.swing.JFrame {
