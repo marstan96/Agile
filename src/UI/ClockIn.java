@@ -140,19 +140,19 @@ public class ClockIn extends javax.swing.JFrame {
 
     private void jbtClockInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtClockInActionPerformed
         clockIn.add(jcbStaffId.getSelectedItem().toString());
-        if(jcbStaffId.equals("ST001") && jlbPassword.getText().equals("ST001"))
+        if(jcbStaffId.toString().equals("ST001") || jtfPassword.getText().equals("ST001"))
         {
         jtaClock.setText(null);
         jtaClock.setText("Alex had clock in at "+now);
         clockIn.add("Alex");
         }
-        else if(jcbStaffId.equals("ST002") && jlbPassword.getText().equals("ST002"))
+        else if(jcbStaffId.toString().equals("ST002") || jtfPassword.getText().equals("ST002"))
         {
         jtaClock.setText(null);
         jtaClock.setText("Edward had clock in at "+now);
         clockIn.add("Edward");
         }
-        else if(jcbStaffId.equals("ST003") && jlbPassword.getText().equals("ST003"))
+        else if(jcbStaffId.toString().equals("ST003") || jtfPassword.getText().equals("ST003"))
         {
         jtaClock.setText(null);
         jtaClock.setText("John had clock in at "+now);
