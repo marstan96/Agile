@@ -1,6 +1,4 @@
 package agileassignment;
-
-
 import javax.swing.*;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -16,7 +14,6 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.util.List;
-
 
 public class ViewMenu extends javax.swing.JFrame {
 
@@ -40,62 +37,63 @@ public class ViewMenu extends javax.swing.JFrame {
         menu.setMenuType("Dessert");
         menu.setMenuPrice(14.00);
         menus.add(menu);
-        
+
         menu = new Menus();
         menu.setMenuID("M1003");
         menu.setMenuName("Mango Sago");
         menu.setMenuType("Dessert");
         menu.setMenuPrice(12.00);
         menus.add(menu);
-        
+
         menu = new Menus();
         menu.setMenuID("M1004");
         menu.setMenuName("Mango Crystal Jelly");
         menu.setMenuType("Dessert");
         menu.setMenuPrice(12.00);
         menus.add(menu);
-        
+
         menu = new Menus();
         menu.setMenuID("M1005");
         menu.setMenuName("Mango Chewy Ball");
         menu.setMenuType("Dessert");
         menu.setMenuPrice(15.00);
         menus.add(menu);
-        
+
         menu = new Menus();
         menu.setMenuID("M1006");
         menu.setMenuName("D24 Durian Mochi");
         menu.setMenuType("Dessert");
         menu.setMenuPrice(20.00);
         menus.add(menu);
-        
+
         menu = new Menus();
         menu.setMenuID("M1007");
         menu.setMenuName("Mango Pancake");
         menu.setMenuType("Dessert");
         menu.setMenuPrice(9.00);
         menus.add(menu);
-        
+
         menu = new Menus();
         menu.setMenuID("M1008");
         menu.setMenuName("Deluxe Mango Mochi");
         menu.setMenuType("Dessert");
         menu.setMenuPrice(14.00);
         menus.add(menu);
-        
+
         menu = new Menus();
         menu.setMenuID("M1009");
         menu.setMenuName("Watermelon Honey Jelly");
         menu.setMenuType("Dessert");
         menu.setMenuPrice(9.00);
         menus.add(menu);
-        
+
         menu = new Menus();
         menu.setMenuID("M1010");
         menu.setMenuName("Healthy Mango Yakult");
         menu.setMenuType("Dessert");
         menu.setMenuPrice(11.00);
         menus.add(menu);
+        
         menu = new Menus();
         menu.setMenuID("M1011");
         menu.setMenuName("Coco Cake");
@@ -105,7 +103,6 @@ public class ViewMenu extends javax.swing.JFrame {
         showUserTable();
     }
 
-   
     public void showUserTable() {
         DefaultTableModel model = (DefaultTableModel) jTable.getModel();
         Object[] row = new Object[6];
@@ -124,16 +121,16 @@ public class ViewMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jtfMenuID = new javax.swing.JTextField();
-        menuType = new javax.swing.JLabel();
-        menuItem = new javax.swing.JComboBox<>();
-        name = new javax.swing.JLabel();
-        price = new javax.swing.JLabel();
+        id = new javax.swing.JTextField();
+        mt = new javax.swing.JLabel();
+        menuType = new javax.swing.JComboBox<>();
+        n = new javax.swing.JLabel();
+        p = new javax.swing.JLabel();
         menuID = new javax.swing.JLabel();
-        jtfName = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
-        jtfPrice = new javax.swing.JTextField();
+        price = new javax.swing.JTextField();
         update = new javax.swing.JButton();
         delete = new javax.swing.JButton();
         back = new javax.swing.JButton();
@@ -143,20 +140,20 @@ public class ViewMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jtfMenuID.setEditable(false);
-        jtfMenuID.setColumns(8);
+        id.setEditable(false);
+        id.setColumns(8);
 
-        menuType.setText("Menu Type : ");
+        mt.setText("Menu Type : ");
 
-        menuItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dessert", "Beverage", "Rice", "Noodles" }));
+        menuType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dessert", "Beverage", "Rice", "Noodles" }));
 
-        name.setText("Name :");
+        n.setText("Name :");
 
-        price.setText("Price (RM) :");
+        p.setText("Price (RM) :");
 
         menuID.setText("Menu ID : ");
 
-        jtfName.setColumns(8);
+        name.setColumns(8);
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -181,7 +178,7 @@ public class ViewMenu extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable);
 
-        jtfPrice.setColumns(8);
+        price.setColumns(8);
 
         update.setText("Update");
         update.addActionListener(new java.awt.event.ActionListener() {
@@ -211,11 +208,11 @@ public class ViewMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menuType, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mt, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(menuID, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                        .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(n, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(update)
                         .addGap(14, 14, 14)
@@ -228,15 +225,15 @@ public class ViewMenu extends javax.swing.JFrame {
                         .addGap(118, 118, 118)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jtfPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(errorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(menuItem, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(menuType, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(errorName, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jtfMenuID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(76, 85, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -247,21 +244,21 @@ public class ViewMenu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(menuID)
-                    .addComponent(jtfMenuID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(name)
-                    .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(n)
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(errorName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(menuType)
-                    .addComponent(menuItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mt)
+                    .addComponent(menuType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(price)
-                        .addComponent(jtfPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(p)
+                        .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(errorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -283,14 +280,41 @@ public class ViewMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-
-       
-                
+        String menuID = id.getText();
+        String menuName = name.getText();
+        int num = menuType.getSelectedIndex();
+        String type="";
+        if(num == 0)
+        {
+            type = "Dessert";
+        }
+        else if(num == 1)
+        {
+            type = "Beverage";
+        }
+        else if(num == 2)
+        {
+            type = "Rice";
+        }
+        else if(num == 3)
+        {
+            type = "Noodles";
+        }
+        
+        String prices = price.getText();
+        
+        //Refresh JTable data
+        TableModel model = jTable.getModel();
+        model.setValueAt(menuID, 10, 0);
+        model.setValueAt(menuName, 10, 1);
+        model.setValueAt(type, 10, 2);
+        model.setValueAt(prices, 10, 3);
+        clear();
 
     }//GEN-LAST:event_updateActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        
+
 
     }//GEN-LAST:event_deleteActionPerformed
 
@@ -299,22 +323,37 @@ public class ViewMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
-        
-        
+        // Display selected row in JTextFields
+        int i = jTable.getSelectedRow();
+        TableModel model = jTable.getModel();
+        id.setText(model.getValueAt(i, 0).toString());
+        name.setText(model.getValueAt(i, 1).toString());
+        String type = (model.getValueAt(i, 2).toString());
+        if (type.charAt(0) == 'D') {
+            number = 0;
+        } else if (type.charAt(0) == ('B')) {
+            number = 1;
+        } else if (type.charAt(0) == 'N') {
+            number = 2;
+        } else if (type.charAt(0) == 'R') {
+            number = 3;
+        }
+        menuType.setSelectedIndex(number);
+        price.setText(model.getValueAt(i, 3).toString());
+
     }//GEN-LAST:event_jTableMouseClicked
 
     public void clear() {
-        jtfMenuID.setText("");
-        jtfName.setText("");
-        jtfPrice.setText("");
-        errorName.setText("");
-        errorPrice.setText("");
+        id.setText("");
+        name.setText("");
+        price.setText("");
+
 
     }
 
     public Boolean checkingPrice() {
         Boolean f = false;
-        String checkPrice = jtfPrice.getText();
+        String checkPrice = price.getText();
 
         try {
             Double price = Double.parseDouble(checkPrice);
@@ -332,7 +371,7 @@ public class ViewMenu extends javax.swing.JFrame {
 
     public static void main(String args[]) {
         ViewMenu frame = new ViewMenu();
-        frame.setTitle("View Menu(Manager)");
+        frame.setTitle("View Menu");
         frame.pack();
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
@@ -346,16 +385,16 @@ public class ViewMenu extends javax.swing.JFrame {
     private javax.swing.JLabel errorName;
     private javax.swing.JLabel errorPhoto;
     private javax.swing.JLabel errorPrice;
+    private javax.swing.JTextField id;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
-    private javax.swing.JTextField jtfMenuID;
-    private javax.swing.JTextField jtfName;
-    private javax.swing.JTextField jtfPrice;
     private javax.swing.JLabel menuID;
-    private javax.swing.JComboBox<String> menuItem;
-    private javax.swing.JLabel menuType;
-    private javax.swing.JLabel name;
-    private javax.swing.JLabel price;
+    private javax.swing.JComboBox<String> menuType;
+    private javax.swing.JLabel mt;
+    private javax.swing.JLabel n;
+    private javax.swing.JTextField name;
+    private javax.swing.JLabel p;
+    private javax.swing.JTextField price;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 private static class Menus {
@@ -401,4 +440,5 @@ private static class Menus {
             this.menuPrice = menuPrice;
         }
 
-    }}
+    }
+}
