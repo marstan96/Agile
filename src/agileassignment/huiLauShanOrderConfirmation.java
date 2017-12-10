@@ -24,20 +24,17 @@ public class huiLauShanOrderConfirmation extends javax.swing.JFrame {
     }
     
     public ArrayList ListMenu(){
-        menu menu1 = new menu("Mango Romance",16.00,1);
-        menu menu2 = new menu("Mango Triple Delight",14.00,1);
-        menu menu3 = new menu("Mango Sago",12.00,1);
-        menu menu4 = new menu("Mango Crystal Jelly",12.00,1);
-        menu menu5 = new menu("Mango Chewy Ball",15.00,1);
+        menu menu1 = new menu("Mango Triple Delight",11.00,1);
+        menu menu2 = new menu("Mango Sago",12.00,1);
+        menu menu3 = new menu("Mango Crystal Jelly",12.00,1);
         list.add(menu1);
         list.add(menu2);
         list.add(menu3);
-        list.add(menu4);
-        list.add(menu5);
+
         return list;
     }
     public void addRowToJTable(){
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel)huiLauShanTable.getModel();
         ArrayList<menu> list = ListMenu();
         Object rowData[] = new Object[3];
         for(int i = 0;i < list.size();i++){
@@ -59,17 +56,22 @@ public class huiLauShanOrderConfirmation extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         submitButton = new javax.swing.JButton();
-        sushiKingLabel = new javax.swing.JLabel();
+        orderConfirmationLabel = new javax.swing.JLabel();
         cancelButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        huiLauShanTable = new javax.swing.JTable();
+        removeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         submitButton.setText("SUBMIT");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
 
-        sushiKingLabel.setText("ORDER CONFIRMATION");
+        orderConfirmationLabel.setText("ORDER CONFIRMATION");
 
         cancelButton.setText("CANCEL");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +80,7 @@ public class huiLauShanOrderConfirmation extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        huiLauShanTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -101,12 +103,12 @@ public class huiLauShanOrderConfirmation extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(huiLauShanTable);
 
-        jButton1.setText("REMOVE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        removeButton.setText("REMOVE");
+        removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                removeButtonActionPerformed(evt);
             }
         });
 
@@ -121,7 +123,7 @@ public class huiLauShanOrderConfirmation extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(174, 174, 174)
-                        .addComponent(sushiKingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(orderConfirmationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addComponent(cancelButton)
@@ -129,18 +131,18 @@ public class huiLauShanOrderConfirmation extends javax.swing.JFrame {
                         .addComponent(submitButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(206, 206, 206)
-                        .addComponent(jButton1)))
+                        .addComponent(removeButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(sushiKingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                .addComponent(orderConfirmationLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(removeButton)
                 .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelButton)
@@ -170,22 +172,54 @@ public class huiLauShanOrderConfirmation extends javax.swing.JFrame {
         super.dispose();
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+    private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
+        DefaultTableModel model = (DefaultTableModel)huiLauShanTable.getModel();
         String message = "Do you sure want to remove your menu item from your order list?";
         String title = "REMOVE MENU ITEM";
         int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
         if (reply == JOptionPane.YES_OPTION)
         {
-            if (jTable1.getSelectedRow() != -1) {
+            if (huiLauShanTable.getSelectedRow() != -1) {
 
-                model.removeRow(jTable1.getSelectedRow());
+                model.removeRow(huiLauShanTable.getSelectedRow());
 
             }
 
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_removeButtonActionPerformed
+
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        payment Payment = new payment();
+        double subtotal = 0.0;
+
+        ArrayList<menu> list = ListMenu();
+        double a, b;
+        for (int i = 0; i < 3; i++) {
+            a = list.get(i).getPrice();
+            b = list.get(i).getQty();
+            subtotal += a * b;
+        }
+        String subttl = Double.toString(subtotal);
+        Payment.subTotal.setText("RM " + subttl);
+        Payment.subTotal.setEditable(false);
+        
+        double deliveryCharge = 3.00;
+        Payment.deliveryCharge.setText("RM " + deliveryCharge);
+        
+        double gst = subtotal * 0.06;
+        String Gst = Double.toString(gst);
+        Payment.gst.setText("RM " + Gst);
+        
+        
+        double ttl = subtotal + deliveryCharge + gst;
+        String total = Double.toString(ttl);
+        Payment.total.setText("RM " + total);
+        
+        Payment.setVisible(true);
+        Payment.setLocationRelativeTo(null);
+        Payment.setTitle("PAYMENT");
+    }//GEN-LAST:event_submitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,11 +258,11 @@ public class huiLauShanOrderConfirmation extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JTable huiLauShanTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JTable jTable1;
+    private javax.swing.JLabel orderConfirmationLabel;
+    private javax.swing.JButton removeButton;
     private javax.swing.JButton submitButton;
-    private javax.swing.JLabel sushiKingLabel;
     // End of variables declaration//GEN-END:variables
 }

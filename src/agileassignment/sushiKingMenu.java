@@ -45,7 +45,7 @@ public class sushiKingMenu extends javax.swing.JFrame {
     }
     
     public void addRowToJTable(){
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel)sushiKingTable.getModel();
         ArrayList<menu> list = ListMenu();
         Object rowData[] = new Object[3];
         for(int i = 0;i <list.size();i++){
@@ -70,7 +70,7 @@ public class sushiKingMenu extends javax.swing.JFrame {
         sushiKingLabel = new javax.swing.JLabel();
         cancelButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        sushiKingTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,7 +90,7 @@ public class sushiKingMenu extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        sushiKingTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -113,7 +113,7 @@ public class sushiKingMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(sushiKingTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -222,8 +222,8 @@ public class sushiKingMenu extends javax.swing.JFrame {
     private javax.swing.JButton cancelButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton submitButton;
     private javax.swing.JLabel sushiKingLabel;
+    private javax.swing.JTable sushiKingTable;
     // End of variables declaration//GEN-END:variables
 }

@@ -59,7 +59,7 @@ public class huiLauShanMenu extends javax.swing.JFrame {
     }
     
     public void addRowToJTable(){
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel)huiLauShanTable.getModel();
         ArrayList<menu> list = ListMenu();
         Object rowData[] = new Object[3];
         for(int i = 0;i <list.size();i++){
@@ -80,14 +80,14 @@ public class huiLauShanMenu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        huiLauShanTable = new javax.swing.JTable();
         submitButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        huiLauShanLabel = new javax.swing.JLabel();
         cancelButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        huiLauShanTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -110,7 +110,7 @@ public class huiLauShanMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(huiLauShanTable);
 
         submitButton.setText("SUBMIT");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +119,7 @@ public class huiLauShanMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("HUI LAU SHAN HEALTHY DESSERT");
+        huiLauShanLabel.setText("HUI LAU SHAN HEALTHY DESSERT");
 
         cancelButton.setText("CANCEL");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -145,14 +145,14 @@ public class huiLauShanMenu extends javax.swing.JFrame {
                 .addContainerGap(26, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(huiLauShanLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(126, 126, 126))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                .addComponent(huiLauShanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -228,10 +228,10 @@ public class huiLauShanMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel huiLauShanLabel;
+    private javax.swing.JTable huiLauShanTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }

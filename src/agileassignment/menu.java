@@ -4,7 +4,7 @@ public class menu {
     private String menuItem;
     private double price;
     private int qty;
-    private double ttlPrice;
+    private double subttl = 0.0, gst;
     
     public menu(){}
     
@@ -39,5 +39,8 @@ public class menu {
     public void setQty(int qty) {
         this.qty = qty;
     }
-    
+
+    public double getSubTotal() {
+        return price * qty;
+    }
 }

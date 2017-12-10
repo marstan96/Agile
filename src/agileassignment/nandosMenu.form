@@ -58,7 +58,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="nandoLabel" min="-2" pref="64" max="-2" attributes="0"/>
+                  <Component id="nandosLabel" min="-2" pref="64" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -67,7 +67,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Component id="nandoLabel" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="nandosLabel" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="239" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -88,7 +88,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="nandosTable">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="3" rowCount="0">
@@ -112,7 +112,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="nandoLabel">
+        <Component class="javax.swing.JLabel" name="nandosLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="NANDO&apos;S"/>
           </Properties>

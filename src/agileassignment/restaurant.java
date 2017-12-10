@@ -24,42 +24,41 @@ public class restaurant extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        sushiKingButton = new javax.swing.JButton();
+        nandosButton = new javax.swing.JButton();
+        sakaeSushiButton = new javax.swing.JButton();
+        huiLauShanButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(300, 410));
         setResizable(false);
 
         jLabel1.setText("Please select one restaurant");
 
-        jButton1.setText("SUSHI KING");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        sushiKingButton.setText("SUSHI KING");
+        sushiKingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                sushiKingButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("NANDO'S");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        nandosButton.setText("NANDO'S");
+        nandosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                nandosButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("SAKAE SUSHI");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        sakaeSushiButton.setText("SAKAE SUSHI");
+        sakaeSushiButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                sakaeSushiButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setText("HUI LAU SHAN HEALTHY DESSERT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        huiLauShanButton.setText("HUI LAU SHAN HEALTHY DESSERT");
+        huiLauShanButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                huiLauShanButtonActionPerformed(evt);
             }
         });
 
@@ -71,10 +70,10 @@ public class restaurant extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sushiKingButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(huiLauShanButton, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+            .addComponent(sakaeSushiButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(nandosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,13 +81,13 @@ public class restaurant extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sushiKingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sakaeSushiButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nandosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(huiLauShanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -106,38 +105,38 @@ public class restaurant extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void sushiKingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sushiKingButtonActionPerformed
         sushiKingMenu sushiKing = new sushiKingMenu();
         sushiKing.setVisible(true);
         sushiKing.pack();
         sushiKing.setLocationRelativeTo(null);
         sushiKing.setTitle("SUSHI KING");
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_sushiKingButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void sakaeSushiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sakaeSushiButtonActionPerformed
         sakaeSushiMenu sakaeSushi = new sakaeSushiMenu();
         sakaeSushi.setVisible(true);
         sakaeSushi.pack();
         sakaeSushi.setLocationRelativeTo(null);
         sakaeSushi.setTitle("SAKAE SUSHI");
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_sakaeSushiButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void nandosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nandosButtonActionPerformed
         nandosMenu nandosMenu = new nandosMenu();
         nandosMenu.setVisible(true);
         nandosMenu.pack();
         nandosMenu.setLocationRelativeTo(null);
         nandosMenu.setTitle("NANDO'S");
-       }//GEN-LAST:event_jButton2ActionPerformed
+       }//GEN-LAST:event_nandosButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void huiLauShanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_huiLauShanButtonActionPerformed
         huiLauShanMenu HuiLauShanMenu = new huiLauShanMenu();
         HuiLauShanMenu.setVisible(true);
         HuiLauShanMenu.pack();
         HuiLauShanMenu.setLocationRelativeTo(null);
         HuiLauShanMenu.setTitle("HUI LAU SHAN HEALTHY DESSERT"); 
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_huiLauShanButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,11 +180,11 @@ public class restaurant extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton huiLauShanButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton nandosButton;
+    private javax.swing.JButton sakaeSushiButton;
+    private javax.swing.JButton sushiKingButton;
     // End of variables declaration//GEN-END:variables
 }
