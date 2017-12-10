@@ -36,7 +36,6 @@ public class cashPayment extends javax.swing.JFrame {
         cancelButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(355, 300));
 
         RM50Button.setText("RM 50");
         RM50Button.setMaximumSize(new java.awt.Dimension(133, 23));
