@@ -100,6 +100,13 @@ public class ViewMenu extends javax.swing.JFrame {
         menu.setMenuType("Dessert");
         menu.setMenuPrice(10.00);
         menus.add(menu);
+        
+        menu = new Menus();
+        menu.setMenuID("M1012");
+        menu.setMenuName("Banana Cak");
+        menu.setMenuType("Dessert");
+        menu.setMenuPrice(12.00);
+        menus.add(menu);
         showUserTable();
     }
 
@@ -234,9 +241,9 @@ public class ViewMenu extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(errorName, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(76, 85, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,7 +269,7 @@ public class ViewMenu extends javax.swing.JFrame {
                     .addComponent(errorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
+                        .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(update)
                             .addComponent(delete)
@@ -270,7 +277,7 @@ public class ViewMenu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(errorPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(203, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 13, Short.MAX_VALUE))
@@ -305,10 +312,11 @@ public class ViewMenu extends javax.swing.JFrame {
         
         //Refresh JTable data
         TableModel model = jTable.getModel();
-        model.setValueAt(menuID, 10, 0);
-        model.setValueAt(menuName, 10, 1);
-        model.setValueAt(type, 10, 2);
-        model.setValueAt(prices, 10, 3);
+        model.setValueAt(menuID, 11, 0);
+        model.setValueAt(menuName, 11, 1);
+        model.setValueAt(type, 11, 2);
+        model.setValueAt(prices, 11, 3);
+        JOptionPane.showMessageDialog(null, "Successful Updated", "Thank You", JOptionPane.INFORMATION_MESSAGE);
         clear();
 
     }//GEN-LAST:event_updateActionPerformed
@@ -371,12 +379,10 @@ public class ViewMenu extends javax.swing.JFrame {
 
     public static void main(String args[]) {
         ViewMenu frame = new ViewMenu();
-        frame.setTitle("View Menu");
-        frame.pack();
-        frame.setResizable(false);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
