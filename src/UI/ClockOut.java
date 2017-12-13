@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 import java.text.DateFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -164,6 +165,7 @@ public class ClockOut extends javax.swing.JFrame {
         jtaClock.setText("Alex had clock out at "+now);
 //        clockIn.add("Alex");
         clockOut.add("John");
+        JOptionPane.showMessageDialog(rootPane, "You had work for 8 hours");
         }
         else if(jcbStaffId.toString().equals("ST002") || jpfPassword.getText().equals("ST002"))
         {
@@ -171,6 +173,7 @@ public class ClockOut extends javax.swing.JFrame {
         jtaClock.setText("Edward had clock out at "+now);
 //        clockIn.add("Edward");
         clockOut.add("John");
+        JOptionPane.showMessageDialog(rootPane, "You had work for 6 hours");
         }
         else if(jcbStaffId.toString().equals("ST003") || jpfPassword.getText().equals("ST003"))
         {
@@ -178,6 +181,7 @@ public class ClockOut extends javax.swing.JFrame {
         jtaClock.setText("John had clock out at "+now);
 //        clockIn.remove("John");
         clockOut.add("John");
+        JOptionPane.showMessageDialog(rootPane, "You had work for 7 hours");
         }
         else
             jtaClock.setText("Password and ID does not fit");
