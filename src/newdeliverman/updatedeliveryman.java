@@ -106,7 +106,6 @@ public class updatedeliveryman extends javax.swing.JFrame {
         jtfAddress.setColumns(20);
         jtfAddress.setRows(5);
         jtaAddress.setViewportView(jtfAddress);
-        jtfAddress.getAccessibleContext().setAccessibleParent(null);
 
         jtfPhoneNo.setMaximumSize(new java.awt.Dimension(400, 30));
         jtfPhoneNo.setMinimumSize(new java.awt.Dimension(400, 30));

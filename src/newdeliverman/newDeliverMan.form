@@ -407,9 +407,12 @@
     <Component class="javax.swing.JComboBox" name="jcbStatus">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
-            <StringItem index="0" value="Full-Time"/>
-            <StringItem index="1" value="Part-Time"/>
+          <StringArray count="5">
+            <StringItem index="0" value="Part-Time"/>
+            <StringItem index="1" value="Full-Time"/>
+            <StringItem index="2" value="Retired"/>
+            <StringItem index="3" value="Quit"/>
+            <StringItem index="4" value="Fired"/>
           </StringArray>
         </Property>
       </Properties>

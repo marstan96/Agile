@@ -166,7 +166,7 @@ public class newDeliverMan extends javax.swing.JFrame {
         jLabel10.setMinimumSize(new java.awt.Dimension(150, 30));
         jLabel10.setPreferredSize(new java.awt.Dimension(150, 30));
 
-        jcbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Full-Time", "Part-Time" }));
+        jcbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Part-Time", "Full-Time", "Retired", "Quit", "Fired" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
