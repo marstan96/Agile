@@ -39,7 +39,7 @@ public class creditCardPayment extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        cardNo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         submitButton = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -49,7 +49,7 @@ public class creditCardPayment extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        card = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,11 +57,11 @@ public class creditCardPayment extends javax.swing.JFrame {
 
         jLabel2.setText("Card Number");
 
-        jTextField1.setColumns(4);
-        jTextField1.setAutoscrolls(false);
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        cardNo.setColumns(4);
+        cardNo.setAutoscrolls(false);
+        cardNo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField1KeyTyped(evt);
+                cardNoKeyTyped(evt);
             }
         });
 
@@ -98,9 +98,9 @@ public class creditCardPayment extends javax.swing.JFrame {
 
         jLabel7.setText("Year");
 
-        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+        card.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField2KeyTyped(evt);
+                cardKeyTyped(evt);
             }
         });
 
@@ -122,7 +122,7 @@ public class creditCardPayment extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(submitButton))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(cardNo, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -131,7 +131,7 @@ public class creditCardPayment extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel7)
                                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(card, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -142,7 +142,7 @@ public class creditCardPayment extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cardNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -156,7 +156,7 @@ public class creditCardPayment extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(card, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelButton)
@@ -168,10 +168,10 @@ public class creditCardPayment extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+    private void cardNoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNoKeyTyped
         char c = evt.getKeyChar();
 
-        boolean max = jTextField1.getText().length() > 15;
+        boolean max = cardNo.getText().length() > 15;
         if (max) {
             evt.consume();
         }
@@ -180,7 +180,7 @@ public class creditCardPayment extends javax.swing.JFrame {
             getToolkit().beep();
             evt.consume();
         }
-    }//GEN-LAST:event_jTextField1KeyTyped
+    }//GEN-LAST:event_cardNoKeyTyped
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         int month = jComboBox1.getSelectedIndex();
@@ -191,22 +191,22 @@ public class creditCardPayment extends javax.swing.JFrame {
         
         String title = "ERROR MESSAGE";
         
-        if (jTextField1.getText().length() < 16 && jTextField1.getText().length() > 0) {
+        if (cardNo.getText().length() < 16 && cardNo.getText().length() > 0) {
             String msg1 = "Card Number can have 16 numbers only!!!";
             JOptionPane.showMessageDialog(null, msg1, title, JOptionPane.ERROR_MESSAGE);
-            jTextField1.setText(null);
+            cardNo.setText(null);
 
-        } else if (jTextField2.getText().length() < 3 && jTextField2.getText().length() > 0) {
+        } else if (card.getText().length() < 3 && card.getText().length() > 0) {
             String msg2 = "Card CVV2/ CVC2/4DBC can have 3 numbers only!!!";
             JOptionPane.showMessageDialog(null, msg2, title, JOptionPane.ERROR_MESSAGE);
-            jTextField2.setText(null);
+            card.setText(null);
 
-        } else if (month == 0 || year == 0 || jTextField1.getText().length() == 0 || jTextField2.getText().length() == 0) {
+        } else if (month == 0 || year == 0 || cardNo.getText().length() == 0 || card.getText().length() == 0) {
             String msg3 = "Please enter all your card details!!!";
             JOptionPane.showMessageDialog(null, msg3, title, JOptionPane.ERROR_MESSAGE);
         }else{
-            String msg4 = "Order Completed!";
-            String title1 = "ORDER COMPLETED";
+            String msg4 = "Payment Completed!";
+            String title1 = "PAYMENT COMPLETED";
             JOptionPane.showMessageDialog(null, msg4, title1, JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_submitButtonActionPerformed
@@ -216,16 +216,16 @@ public class creditCardPayment extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        jTextField1.setText(null);
+        cardNo.setText(null);
         jComboBox1.setSelectedIndex(0);
         jComboBox2.setSelectedIndex(0);
-        jTextField2.setText(null);
+        card.setText(null);
     }//GEN-LAST:event_clearButtonActionPerformed
 
-    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+    private void cardKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardKeyTyped
         char c = evt.getKeyChar();
 
-        boolean max = jTextField2.getText().length() > 2;
+        boolean max = card.getText().length() > 2;
         if (max) {
             evt.consume();
         }
@@ -234,7 +234,7 @@ public class creditCardPayment extends javax.swing.JFrame {
             getToolkit().beep();
             evt.consume();
         }
-    }//GEN-LAST:event_jTextField2KeyTyped
+    }//GEN-LAST:event_cardKeyTyped
 
     public void CloseFrame() {
         super.dispose();
@@ -277,6 +277,8 @@ public class creditCardPayment extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
+    private javax.swing.JTextField card;
+    private javax.swing.JTextField cardNo;
     private javax.swing.JButton clearButton;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -286,8 +288,6 @@ public class creditCardPayment extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }
